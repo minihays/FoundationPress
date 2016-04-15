@@ -194,7 +194,7 @@ gulp.task('package', ['build'], function() {
 gulp.task('deploy-gg', ['build'], function() {
   var fs = require('fs');
   var rsync = require('gulp-rsync');
-  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
+  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM-ss");
   var pkg = JSON.parse(fs.readFileSync('./package.json'));
   var title = 'packaged/' + pkg.name + '_' + time;
 
@@ -211,6 +211,25 @@ gulp.task('deploy-gg', ['build'], function() {
     }));
 });
 
+gulp.task('deploy-ophg', ['build'], function() {
+  var fs = require('fs');
+  var rsync = require('gulp-rsync');
+  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM-ss");
+  var pkg = JSON.parse(fs.readFileSync('./package.json'));
+  var title = 'packaged/' + pkg.name + '_' + time;
+
+  return gulp.src(PATHS.pkg)
+    .pipe(gulp.dest(title))
+    .pipe(rsync({
+      root: title,
+      hostname: 'operationhighground.org',
+      username: 'ophighground',
+      progress: true,
+      recursive: true,
+      clean: true,
+      destination: '/home/ophighground/Operation_HighGround/wp-content/themes/ophg'
+    }));
+});
 
 // Build task
 // Runs copy then runs sass & javascript in parallel
