@@ -54,6 +54,7 @@
     "gulp-phpcbf": "latest",
     "gulp-phpcs": "^1.0.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-rsync": "latest",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
@@ -73,6 +74,7 @@
     "phpcbf": "gulp phpcbf",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
-    "watch": "gulp"
+    "watch": "gulp",
+    "deploy-gg": "gulp deploy-gg --production"
   }
 }
