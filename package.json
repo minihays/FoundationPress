@@ -75,6 +75,7 @@
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp",
-    "deploy-gg": "gulp deploy-gg --production"
+    "deploy-gg": "gulp deploy-gg --production",
+    "deploy-ophg": "gulp deploy-ophg --production"
   }
 }
