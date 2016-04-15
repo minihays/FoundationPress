@@ -76,7 +76,7 @@ var PATHS = {
     '!**/composer.json',
     '!**/composer.lock',
     '!**/codesniffer.ruleset.xml',
-    '!**/packaged/*',
+    '!**/packaged/**',
   ]
 };
 
@@ -190,6 +190,27 @@ gulp.task('package', ['build'], function() {
     .pipe($.zip(title))
     .pipe(gulp.dest('packaged'));
 });
+
+gulp.task('deploy-gg', ['build'], function() {
+  var fs = require('fs');
+  var rsync = require('gulp-rsync');
+  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
+  var pkg = JSON.parse(fs.readFileSync('./package.json'));
+  var title = 'packaged/' + pkg.name + '_' + time;
+
+  return gulp.src(PATHS.pkg)
+    .pipe(gulp.dest(title))
+    .pipe(rsync({
+      root: title,
+      hostname: 'gansersgoodies.com',
+      username: 'gansersgoodies',
+      progress: true,
+      recursive: true,
+      clean: true,
+      destination: '/home/gansersgoodies/gansersgoodies.com/wp-content/themes/gg'
+    }));
+});
+
 
 // Build task
 // Runs copy then runs sass & javascript in parallel
