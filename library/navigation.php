@@ -210,7 +210,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				echo '<li class="current item-current-';
 				echo get_query_var('paged');
 				echo '">';
-				echo __('Page');
+				echo __('Page', 'foundationpress' );
 				echo ' ';
 				echo get_query_var('paged');
 				echo '</li>';
