@@ -11,9 +11,9 @@ get_header(); ?>
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php
 $args=array(
-'post_type' => 'message',
+ 'post_type' => 'message',
  'post_status' => 'publish',
- 'paged' => true,
+ 'paged' => get_query_var( 'paged' ),
  'posts_per_page' => 10,
  'ignore_sticky_posts'=> 1
 );
