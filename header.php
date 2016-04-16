@@ -46,11 +46,11 @@
 					<li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
 				</ul>
 			</div>
-			<div class="top-bar-right"> <!--step 1-->
+			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>
-<!--step 2-->
-				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?> <!--step 3-->
-					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?> <!--step 4-->
+
+				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
 			</div>
 		</nav>
