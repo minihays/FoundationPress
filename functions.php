@@ -49,13 +49,3 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
-/*
- *
- * Removes products count after categories name
- *
- */
-add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
-
-function woo_remove_category_products_count() {
-  return;
-}

@@ -20,7 +20,7 @@
 .title-bar-title {
   a {
     font-size: 1rem;
-    color: #121212;
+    color: #B9B9B9;
   }
 }
 
@@ -29,31 +29,31 @@
 
   .menu .home a {
     font-size: 1rem;
-    color: #121212;
+    color: #B9B9B9;
   }
 
   .menu a {
     height: 45px;
     line-height: 45px;
-    color: #121212;
+    color: #e6e6e6;
     padding-top: 0;
     padding-bottom: 0;
-    font-weight: 400;
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 0.8rem;
     line-height: 1;
 
     &:hover:not(.button) {
-      color: #242424;
+      background-color: #2a2a2a;
     }
   }
 
   .menu>li:not(.menu-text)>a { padding: 1rem; }
-  //.menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
 
   .dropdown.menu .submenu {
-    background-color: #ffffff;
+    background-color: #121212;
     color: #e6e6e6;
-    border: 1px solid #121212;
+    border: 0;
   }
 
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
