@@ -33,14 +33,18 @@ body {
   text-align: justify;
 }
 
-.entry-title, .page-title, .blogpost-title {
-  font-family: 'Lobster', cursive;
-}
-
 #sbc-calendar .sbc-navigation select:first-child {
   width: 60%;
 }
 
 #sbc-calendar .sbc-navigation select:nth-child(2) {
   width: 30%;
+}
+
+.entry-title, .page-title, .blogpost-title {
+  font-family: 'Anaheim', sans-serif;
+}
+
+div.product {
+  margin-top: 1.5em;
 }
